@@ -227,6 +227,8 @@ function create_config( )
     "feedback",
     "get",
     "google",
+    "img_google",
+    "echo",
     "gps",
     "ingroup",
     "inpm",
