@@ -240,11 +240,13 @@ function create_config( )
     "set",
     "spam",
     "stats",
+    "tranlate",
     "support",
     "filterworld",
     "server_manager",
     "time",
-    "version"
+    "version",
+    "youtube",
     },
 	    sudo_users = {179071599},--Sudo users
     disabled_channels = {},
