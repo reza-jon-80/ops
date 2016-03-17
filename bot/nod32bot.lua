@@ -221,6 +221,8 @@ function create_config( )
     "botnumber",
     "broadcast",
     "calc",
+    "chat",
+    "wiki",
     "download_media",
     "feedback",
     "get",
