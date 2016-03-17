@@ -12,7 +12,7 @@ local function run(msg, matches)
     end
     local chat = get_receiver(msg)
     local user = "user#id"..msg.from.id
-    if lock_imoji == "yes" then
+    if lock_imoji == "💚" then
         send_large_msg(chat, 'به دلیل ارسال ایموجی فیس اخراج شد')
         chat_del_user(chat, user, ok_cb, true)
     end
