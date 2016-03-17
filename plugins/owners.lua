@@ -1,80 +1,78 @@
-
-
 local function lock_group_namemod(msg, data, target)
   local group_name_set = data[tostring(target)]['settings']['set_name']
   local group_name_lock = data[tostring(target)]['settings']['lock_name']
-  if group_name_lock == 'yes' then
-    return 'Group name is already locked'
+  if group_name_lock == '💙' then
+    return 'اسم گروه در حال حاظر قفل می باشد'
   else
-    data[tostring(target)]['settings']['lock_name'] = 'yes'
+    data[tostring(target)]['settings']['lock_name'] = '💙'
     save_data(_config.moderation.data, data)
     rename_chat('chat#id'..target, group_name_set, ok_cb, false)
-  return 'Group name has been locked'
+  return 'اسم گروه قفل شد'
   end
 end
 
 local function unlock_group_namemod(msg, data, target)
   local group_name_set = data[tostring(target)]['settings']['set_name']
   local group_name_lock = data[tostring(target)]['settings']['lock_name']
-  if group_name_lock == 'no' then
-    return 'Group name is already unlocked'
+  if group_name_lock == '💔' then
+    return 'اسم گروه در حال حاظر باز می باشد'
   else
-    data[tostring(target)]['settings']['lock_name'] = 'no'
+    data[tostring(target)]['settings']['lock_name'] = '💔'
     save_data(_config.moderation.data, data)
-  return 'Group name has been unlocked'
+  return 'اسم گروه باز شد'
   end
 end
 
 local function lock_group_floodmod(msg, data, target)
   local group_flood_lock = data[tostring(target)]['settings']['flood']
-  if group_flood_lock == 'yes' then
-    return 'Group flood is locked'
+  if group_flood_lock == '💙' then
+    return 'حساسیت ضد اسپم گروه قفل می باشد'
   else
-    data[tostring(target)]['settings']['flood'] = 'yes'
+    data[tostring(target)]['settings']['flood'] = '💙'
     save_data(_config.moderation.data, data)
-  return 'Group flood has been locked'
+  return 'حساسیت ضد اسپم گروه قفل شد'
   end
 end
 
 local function unlock_group_floodmod(msg, data, target)
   local group_flood_lock = data[tostring(target)]['settings']['flood']
-  if group_flood_lock == 'no' then
-    return 'Group flood is not locked'
+  if group_flood_lock == '💔' then
+    return 'حساسیت ضد اسپم گروه قفل نمی باشد'
   else
-    data[tostring(target)]['settings']['flood'] = 'no'
+    data[tostring(target)]['settings']['flood'] = '💔'
     save_data(_config.moderation.data, data)
-  return 'Group flood has been unlocked'
+  return 'حساسیت ضد اسپم گروه باز شد'
   end
 end
 
 local function lock_group_membermod(msg, data, target)
   local group_member_lock = data[tostring(target)]['settings']['lock_member']
-  if group_member_lock == 'yes' then
-    return 'Group members are already locked'
+  if group_member_lock == '💙' then
+    return 'اعضای گروه در حال حاظر قفل می باشد'
   else
-    data[tostring(target)]['settings']['lock_member'] = 'yes'
+    data[tostring(target)]['settings']['lock_member'] = '💙'
     save_data(_config.moderation.data, data)
   end
-  return 'Group members has been locked'
+  return 'اعضای گروه قفل شدند'
 end
 
 local function unlock_group_membermod(msg, data, target)
   local group_member_lock = data[tostring(target)]['settings']['lock_member']
-  if group_member_lock == 'no' then
-    return 'Group members are not locked'
+  if group_member_lock == '💔' then
+    return 'اعضای گروه قفل نیستند'
   else
-    data[tostring(target)]['settings']['lock_member'] = 'no'
+    data[tostring(target)]['settings']['lock_member'] = '💔'
     save_data(_config.moderation.data, data)
-  return 'Group members has been unlocked'
+  return 'اعضای گروه باز شدند'
   end
 end
 
 local function unlock_group_photomod(msg, data, target)
   local group_photo_lock = data[tostring(target)]['settings']['lock_photo']
-  if group_photo_lock == 'no' then
-      return 'Group photo is not locked'
+  if group_photo_lock == '💔' then
+      return 'عکس گروه قفل نمی باشد'
   else
-      data[tostring(target)]['settings']['lock_photo'] = 'no'
+      data[tostring(target)]['settings']['lock_photo'] = '💔'
       save_data(_config.moderation.data, data)
   return 'Group photo has been unlocked'
   end
@@ -91,7 +89,7 @@ local function show_group_settingsmod(msg, data, target)
       end
     end
     local settings = data[tostring(target)]['settings']
-    local text = "Group settings:\nLock group name : "..settings.lock_name.."\nLock group photo : "..settings.lock_photo.."\nLock group member : "..settings.lock_member.."\nflood sensitivity : "..NUM_MSG_MAX
+    local text = "تنظیمات گروه:\nLock اسم گروه: "..settings.lock_name.."\nLock عکس گروه: "..settings.lock_photo.."\nLock اعضای گروه: "..settings.lock_member.."\nحساسیت ضد اسپم: "..NUM_MSG_MAX
     return text
 end
 
@@ -100,7 +98,7 @@ local function set_rules(target, rules)
   local data_cat = 'rules'
   data[tostring(target)][data_cat] = rules
   save_data(_config.moderation.data, data)
-  return 'Set group rules to:\n'..rules
+  return 'قوانین تنظیم شد به:\n'..rules
 end
 
 local function set_description(target, about)
@@ -108,7 +106,7 @@ local function set_description(target, about)
   local data_cat = 'description'
   data[tostring(target)][data_cat] = about
   save_data(_config.moderation.data, data)
-  return 'Set group description to:\n'..about
+  return 'درباره گروه تنظیم شد به:\n'..about
 end
 
 local function run(msg, matches)
@@ -119,53 +117,53 @@ local function run(msg, matches)
     if matches[2] == 'ban' then
       local chat_id = matches[1]
       if not is_owner2(msg.from.id, chat_id) then
-        return "You are not the owner of this group"
+        return "شما مدیر اصلی این گروه نیستید"
       end
       if tonumber(matches[3]) == tonumber(our_id) then return false end
       local user_id = matches[3]
       if tonumber(matches[3]) == tonumber(msg.from.id) then 
-        return "You can't ban yourself"
+        return "شما نمی توانید افراد را بن کنید"
       end
       ban_user(matches[3], matches[1])
       local name = user_print_name(msg.from)
       savelog(matches[1], name.." ["..msg.from.id.."] banned user ".. matches[3])
-      return 'User '..user_id..' banned'
+      return 'یوزر '..user_id..' بن شد'
     end
     if matches[2] == 'unban' then
     if tonumber(matches[3]) == tonumber(our_id) then return false end
       local chat_id = matches[1]
       if not is_owner2(msg.from.id, chat_id) then
-        return "You are not the owner of this group"
+        return "شما ادمین اصلی این گروه نیستید"
       end
       local user_id = matches[3]
       if tonumber(matches[3]) == tonumber(msg.from.id) then 
-        return "You can't unban yourself"
+        return "شما نمی توانید افراد را آنبن کنید"
       end
       local hash =  'banned:'..matches[1]
       redis:srem(hash, user_id)
       local name = user_print_name(msg.from)
       savelog(matches[1], name.." ["..msg.from.id.."] unbanned user ".. matches[3])
-      return 'User '..user_id..' unbanned'
+      return 'یوزر '..user_id..' آنبن شد'
     end
     if matches[2] == 'kick' then
       local chat_id = matches[1]
       if not is_owner2(msg.from.id, chat_id) then
-        return "You are not the owner of this group"
+        return "شما مدیر اصلی این گروه نیستید"
       end
       if tonumber(matches[3]) == tonumber(our_id) then return false end
       local user_id = matches[3]
       if tonumber(matches[3]) == tonumber(msg.from.id) then 
-        return "You can't kick yourself"
+        return "شما نمی توانید افراد را بن کنید"
       end
       kick_user(matches[3], matches[1])
       local name = user_print_name(msg.from)
       savelog(matches[1], name.." ["..msg.from.id.."] kicked user ".. matches[3])
-      return 'User '..user_id..' kicked'
+      return 'یوزر '..user_id..' اخراج شد'
     end
     if matches[2] == 'clean' then
       if matches[3] == 'modlist' then
         if not is_owner2(msg.from.id, chat_id) then
-          return "You are not the owner of this group"
+          return "شما مدیر اصلی این گروه نیستید"
         end
         for k,v in pairs(data[tostring(matches[1])]['moderators']) do
           data[tostring(matches[1])]['moderators'][tostring(k)] = nil
@@ -176,7 +174,7 @@ local function run(msg, matches)
       end
       if matches[3] == 'rules' then
         if not is_owner2(msg.from.id, chat_id) then
-          return "You are not the owner of this group"
+          return "شما مدیر اصلی این گروه نیستید"
         end
         local data_cat = 'rules'
         data[tostring(matches[1])][data_cat] = nil
@@ -186,7 +184,7 @@ local function run(msg, matches)
       end
       if matches[3] == 'about' then
         if not is_owner2(msg.from.id, chat_id) then
-          return "You are not the owner of this group"
+          return "شما مدیر اصلی این گروه نیستید"
         end
         local data_cat = 'description'
         data[tostring(matches[1])][data_cat] = nil
@@ -197,21 +195,21 @@ local function run(msg, matches)
     end
     if matches[2] == "setflood" then
       if not is_owner2(msg.from.id, chat_id) then
-        return "You are not the owner of this group"
+        return "شما مدیر اصلی این گروه نیستید"
       end
       if tonumber(matches[3]) < 5 or tonumber(matches[3]) > 20 then
-        return "Wrong number,range is [5-20]"
+        return "عدد وارد شده اشتباه است باید بین 5 تا 20 باشد"
       end
       local flood_max = matches[3]
       data[tostring(matches[1])]['settings']['flood_msg_max'] = flood_max
       save_data(_config.moderation.data, data)
       local name = user_print_name(msg.from)
       savelog(matches[1], name.." ["..msg.from.id.."] set flood to ["..matches[3].."]")
-      return 'Group flood has been set to '..matches[3]
+      return 'حساسیت ضد اسپم تنظیم شد به '..matches[3]
     end
     if matches[2] == 'lock' then
       if not is_owner2(msg.from.id, chat_id) then
-        return "You are not the owner of this group"
+        return "شما مدیر اصلی این گروه نیستید"
       end
       local target = matches[1]
       if matches[3] == 'name' then
@@ -227,7 +225,7 @@ local function run(msg, matches)
     end
     if matches[2] == 'unlock' then
       if not is_owner2(msg.from.id, chat_id) then
-        return "You are not the owner of this group"
+        return "شما ادمین اصلی این گروه نیستید"
       end
       local target = matches[1]
       if matches[3] == 'name' then
@@ -244,7 +242,7 @@ local function run(msg, matches)
     if matches[2] == 'new' then
       if matches[3] == 'link' then
         if not is_owner2(msg.from.id, chat_id) then
-          return "You are not the owner of this group"
+          return "شما ادمین اصلی این گروه نیستید"
         end
         local function callback (extra , success, result)
           local receiver = 'chat#'..matches[1]
@@ -257,21 +255,21 @@ local function run(msg, matches)
         local name = user_print_name(msg.from)
         savelog(matches[1], name.." ["..msg.from.id.."] revoked group link ")
         export_chat_link(receiver, callback, true)
-        return "Created a new new link ! \n owner can get it by /owners "..matches[1].." get link"
+        return "لینک حدید ایجاد شد \n مدیر می تواند آن را دریافت کند"..matches[1].." get link"
       end
     end
     if matches[2] == 'get' then 
       if matches[3] == 'link' then
         if not is_owner2(msg.from.id, chat_id) then
-          return "You are not the owner of this group"
+          return "شما مدیر اصلی این گروه نیستید"
         end
         local group_link = data[tostring(matches[1])]['settings']['set_link']
         if not group_link then 
-          return "Create a link using /newlink first !"
+          return "اول لینک جدیدی ایجاد کنید"
         end
         local name = user_print_name(msg.from)
         savelog(matches[1], name.." ["..msg.from.id.."] requested group link ["..group_link.."]")
-        return "Group link:\n"..group_link
+        return "لینک گروه:\n"..group_link
       end
     end
     if matches[1] == 'changeabout' and matches[2] and is_owner2(msg.from.id, matches[2]) then
@@ -315,7 +313,6 @@ return {
   },
   run = run
 }
---Copyright and edit; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
+-- مدیر : @mohammadarak
+-- ربات : @avirabot
+-- هر گونه کپی برداری بدون ذکر منبع حرام است 
