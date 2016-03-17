@@ -4,7 +4,7 @@ local data = load_data(_config.moderation.data)
         local user_id = msg.from.id
         if data[tostring(msg.to.id)] then
         if data[tostring(msg.to.id)]['settings'] then
-        if data[tostring(msg.to.id)]['settings']['lock_join'] == 'yes' then
+        if data[tostring(msg.to.id)]['settings']['lock_join'] == '💚' then
       kick_user(user_id, msg.to.id)
     end
    end
@@ -17,7 +17,6 @@ return {
   },
   run = run
 }
---Copyright and edit; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
+-- مدیر : @mohammadarak
+-- ربات : @avirabot
+-- هر گونه کپی برداری بدون ذکر منبع حرام است 
