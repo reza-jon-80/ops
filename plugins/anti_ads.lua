@@ -1,11 +1,8 @@
-
-
-
 local function run(msg)
     
     local data = load_data(_config.moderation.data)
     
-     if data[tostring(msg.to.id)]['settings']['antilink'] == 'yes' then
+     if data[tostring(msg.to.id)]['settings']['antilink'] == '💚' then
       
     
 if not is_momod(msg) then
@@ -29,8 +26,6 @@ return {patterns = {
 "[Ww][Ww][Ww]:",
 "عضویت",
 }, run = run}
-
---Copyright and edit; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
+-- مدیر : @mohammadarak
+-- ربات : @avirabot
+-- هر گونه کپی برداری بدون ذکر منبع حرام است 
