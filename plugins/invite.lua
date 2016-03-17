@@ -26,7 +26,7 @@ local function resolve_username(extra, success, result)
     chat_add_user(chat, user, callback, false)
     return extra.text
   else
-    return send_large_msg(chat, "Can't invite user to this group.")
+    return send_large_msg(chat, "نمی توانم این فرد را به گروه دعوت کنم")
   end
 end
 
@@ -34,7 +34,7 @@ local function action_by_reply(extra, success, result)
   if success == 1 then
     chat_add_user('chat#id'..result.to.id, 'user#id'..result.from.id, callback, false)
   else
-    return send_large_msg('chat#id'..result.to.id, "Can't invite user to this group.")
+    return send_large_msg('chat#id'..result.to.id, "نمی توانم این فرد را به گروه دعوت کنم")
   end
 end
 
@@ -57,12 +57,12 @@ local function run(msg, matches)
       chat_add_user(chat, user, callback, {chat=chat, text=text})
     end
   else
-    return 'This isnt a chat group!'
+    return 'اینجا یک گروه نیست'
   end
 end
 
 return {
-  description = 'Invite other user to the chat group.',
+  description = 'دعوت افراد دیگر به گروه',
   usage = {
     -- Need space in front of this, so bot won't consider it as a command
     ' !invite [id|user_name|name]'
@@ -77,8 +77,6 @@ return {
 }
 
 end
-
---Copyright; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
+-- مدیر : @mohammadarak
+-- ربات : @avirabot
+-- هر گونه کپی برداری بدون ذکر منبع حرام است 
