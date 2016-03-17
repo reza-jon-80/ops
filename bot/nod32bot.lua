@@ -248,80 +248,80 @@ function create_config( )
 	    sudo_users = {158990680},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[
-https://github.com/BH-YAGHI/NOD32-BOT.git
+    about_text = [[Avira Anti Spammer Bot
+https://github.com/dram1135/avira-bot.git
 
-channel : @Nod32team
-sodu : @behrooZyaghi
+channel : @aviratgl
+sodu : @mohammadarak
 ]],
     help_text_realm = [[
-Realm Commands:
+دستورات اتاق کنترل گروه:
 
-!creategroup [Name]
-Create a group
+!creategroup [اسم]
+ساخت یک گروه با اسم دلخواه 
 
-!createrealm [Name]
-Create a realm
+!createrealm [اسم]
+ساخت یک اتاق کنترل
 
-!setname [Name]
-Set realm name
+!setname [اسم]
+تنظیم اسم ریلم
 
-!setabout [GroupID] [Text]
-Set a group's about text
+!setabout [متن] [ایدی گروه]
+تنظیم درباره اتاق کنترل
 
-!setrules [GroupID] [Text]
-Set a group's rules
+!setrules [متن] [ایدی گروه]
+تنظیم قوانین اتاق کنترل
 
-!lock [GroupID] [setting]
-Lock a group's setting
+!lock [تنظیمات] [ایدی گروه]
+قفل یکی از تنظیمات گروه
 
-!unlock [GroupID] [setting]
-Unock a group's setting
+!unlock [تنظیمات] [ایدی گروه]
+باز کردن یکی از تنظیمات گروه
 
 !wholist
-Get a list of members in group/realm
+دریافت لیست اعضای گروه/اتاق کنترل
 
 !who
-Get a file of members in group/realm
+لیست اعضای گروه/اتاق کنترل به صورت فایل
 
 !type
-Get group type
+(دریافت تایپ گروه (گروه یا اتاق کنترل
 
-!kill chat [GroupID]
-Kick all memebers and delete group
+!kill chat [ایدی گروه]
+حذف یک گروه
 
-!kill realm [RealmID]
-Kick all members and delete realm
+!kill realm [ایدی ریلم]
+حذف یک ریلم
 
-!addadmin [id|username]
-Promote an admin by id OR username *Sudo only
+!addadmin [ایدی فرد|یوزر عددی]
+اضافه کردن ادمین به گروه
 
-!removeadmin [id|username]
-Demote an admin by id OR username *Sudo only
+!removeadmin [ایدی فرد|یوزر عددی]
+حذف کردن یک ادمین
 
 !list groups
-Get a list of all groups
+لیست تمام گروه های من به همراه ایدی
 
 !list realms
-Get a list of all realms
+لیست تمام ریلم های من به همراه ایدی
 
 !log
-Grt a logfile of current group or realm
+دریافت اطلاعات کلی گروه یا ریلم
 
-!broadcast [text]
-!broadcast Hello !
-Send text to all groups
-Only sudo users can run this command
+!broadcast [متن]
+!broadcast سلام !
+ارسال متن به تمام گروه ها
+(فقط مخصوص سودو (ادمین اصلی
 
-!bc [group_id] [text]
-!bc 123456789 Hello !
-This command will send text to [group_id]
+!bc [متن] [آیدی گروه]
+!bc 123456789 سلام !
+ارسال یک پیام به یک گروه مشخص توسط ایدی گروه
 
-ch: @Nod32team
+ch: @aviratgl
 
 ]],
     help_text = [[
-NOD32 Commands list :
+🚀 Avira Commands list :
  
 1-banhammer list ^
  
@@ -512,13 +512,9 @@ NOD32 Commands list :
 !version
 ورژن ربات
 
-!feedback (text)
-ارسال نظرات به سازنده
-
-you can use both "/" and "!" 
 .شما میتوانید از ! و / استفاده کنید
 
-channel: @Nod32Team
+channel: @mohammadarak
 
 G00D LUCK ^_^
 ]]
