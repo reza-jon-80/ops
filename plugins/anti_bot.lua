@@ -44,7 +44,7 @@ local function kickUser(userId, chatId)
   local user = 'user#id'..userId
   chat_del_user(chat, user, function (data, success, result)
     if success ~= 1 then
-      print('I can\'t kick '..data.user..' but should be kicked')
+      print('من نمی توانم این فرد را '..data.user..' اخراج کنم ولی باید اخراج شود')
     end
   end, {chat=chat, user=user})
 end
@@ -53,40 +53,40 @@ local function run (msg, matches)
   -- We wont return text if is a service msg
   if matches[1] ~= 'chat_add_user' and matches[1] ~= 'chat_add_user_link' then
     if msg.to.type ~= 'chat' then
-      return 'Anti-flood works only on channels'
+      return 'ضد اسپم فقط در کانال ها کار می کند'
     end
   end
 
   local chatId = msg.to.id
   if matches[1] == 'enable' then
     enableAntiBot(chatId)
-    return 'bot cant come group is safe'
+    return 'ورود ربات ممنوع شد'
   end
   if matches[1] == 'disable' then
     disableAntiBot(chatId)
-    return 'bot can come group is NOT safe'
+    return 'ربات ها می توانند وارد شوند ورود ربات مجاز است'
   end
   if matches[1] == 'allow' then
     local userId = matches[2]
     allowBot(userId, chatId)
-    return 'Bot '..userId..' allowed'
+    return 'ربات '..userId..' دسترسی دارد'
   end
   if matches[1] == 'disallow' then
     local userId = matches[2]
     disallowBot(userId, chatId)
-    return 'Bot '..userId..' disallowed'
+    return 'ربات '..userId..' دسترسی ندارد'
   end
   if matches[1] == 'chat_add_user' or matches[1] == 'chat_add_user_link' then
     local user = msg.action.user or msg.from
     if isABot(user) then
-      print('It\'s a bot!')
+      print('این یک ربات می باشد')
       if isAntiBotEnabled(chatId) then
-        print('Anti bot is enabled')
+        print('ورود ربات ممنوع شد')
         local userId = user.id
         if not isBotAllowed(userId, chatId) then
           kickUser(userId, chatId)
         else
-          print('This bot is allowed')
+          print('این ربات دسترسی دارد')
         end
       end
     end
@@ -111,7 +111,6 @@ return {
   },
   run = run
 }
---Copyright; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
+-- مدیر : @mohammadarak
+-- ربات : @avirabot
+-- هر گونه کپی برداری بدون ذکر منبع حرام است 
