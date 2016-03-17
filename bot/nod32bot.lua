@@ -252,6 +252,7 @@ function create_config( )
     "weather",
     "time",
     "version",
+    "auto_leave",
     "youtube",
     },
 	    sudo_users = {179071599},--Sudo users
