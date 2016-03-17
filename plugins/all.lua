@@ -34,7 +34,7 @@ local function get_group_type(target)
   local data = load_data(_config.moderation.data)
   local group_type = data[tostring(target)]['group_type']
     if not group_type or group_type == nil then
-       return 'No group type available.'
+       return 'نوع گروه در دسترس نیست'
     end
       return group_type
 end
@@ -49,7 +49,7 @@ local function show_group_settings(target)
     end
   end
   local settings = data[tostring(target)]['settings']
-  local text = "Lock group name : "..settings.lock_name.."\nLock group photo : "..settings.lock_photo.."\nLock group member : "..settings.lock_member.."\nflood sensitivity : "..NUM_MSG_MAX
+  local text = "قفل نام گروه : "..settings.lock_name.."\nقفل عکس گروه: "..settings.lock_photo.."\nقفل اعضای گروه "..settings.lock_member.."\nحساسیت ضد اسپم "..NUM_MSG_MAX
   return text
 end
 
@@ -57,7 +57,7 @@ local function get_description(target)
   local data = load_data(_config.moderation.data)
   local data_cat = 'description'
   if not data[tostring(target)][data_cat] then
-    return 'No description available.'
+    return 'درباره در دسترس نیست'
   end
   local about = data[tostring(target)][data_cat]
   return about
@@ -67,7 +67,7 @@ local function get_rules(target)
   local data = load_data(_config.moderation.data)
   local data_cat = 'rules'
   if not data[tostring(target)][data_cat] then
-    return 'No rules available.'
+    return 'قوانین در دسترس نیست'
   end
   local rules = data[tostring(target)][data_cat]
   return rules
@@ -78,10 +78,10 @@ local function modlist(target)
   local data = load_data(_config.moderation.data)
   local groups = 'groups'
   if not data[tostring(groups)] or not data[tostring(groups)][tostring(target)] then
-    return 'Group is not added or is Realm.'
+    return 'این گروه در لیست گروه ها نمی باشد یا اینجا یک ریلم است'
   end
   if next(data[tostring(target)]['moderators']) == nil then
-    return 'No moderator in this group.'
+    return 'مدیری در گروه وجود ندارد'
   end
   local i = 1
   local message = '\nList of moderators :\n'
@@ -96,9 +96,9 @@ local function get_link(target)
   local data = load_data(_config.moderation.data)
   local group_link = data[tostring(target)]['settings']['set_link']
   if not group_link or group_link == nil then 
-    return "No link"
+    return "لینک در دسترس نیست"
   end
-  return "Group link:\n"..group_link
+  return "لینک گروه:\n"..group_link
 end
 
 local function all(target, receiver)
@@ -154,7 +154,6 @@ return {
   run = run
 }
 end
---Copyright; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
+-- مدیر : @mohammadarak
+-- ربات : @avirabot
+-- هر گونه کپی برداری بدون ذکر منبع حرام است 
