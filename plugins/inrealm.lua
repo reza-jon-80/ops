@@ -382,7 +382,7 @@ local function admin_user_demote(receiver, member_username, member_id)
         end
         data['admins'][tostring(member_id)] = nil
         save_data(_config.moderation.data, data)
-        return send_large_msg(receiver, 'Admin '..member_username..' has been demoted.')
+        return send_large_msg(receiver, 'Admin '..member_username..' از لیست مدیران حذف شد')
 end
 
  
@@ -390,7 +390,7 @@ local function username_id(cb_extra, success, result)
    local mod_cmd = cb_extra.mod_cmd
    local receiver = cb_extra.receiver
    local member = cb_extra.member
-   local text = 'No user @'..member..' in this group.'
+   local text = 'یوزر @'..member..' دز این گروه'
    for k,v in pairs(result.members) do
       vusername = v.username
       if vusername == member then
@@ -411,12 +411,12 @@ local function set_log_group(msg)
     return 
   end
   local log_group = data[tostring(groups)][tostring(msg.to.id)]['log_group']
-  if log_group == 'yes' then
-    return 'Log group is already set'
+  if log_group == '💚' then
+    return 'لوگ گروه در حال حاظر تنظیم شده است'
   else
-    data[tostring(groups)][tostring(msg.to.id)]['log_group'] = 'yes'
+    data[tostring(groups)][tostring(msg.to.id)]['log_group'] = '💚'
     save_data(_config.moderation.data, data)
-    return 'Log group has been set'
+    return 'لوگ گروه تنظیم شد'
   end
 end
 
@@ -425,12 +425,12 @@ local function unset_log_group(msg)
     return 
   end
   local log_group = data[tostring(groups)][tostring(msg.to.id)]['log_group']
-  if log_group == 'no' then
-    return 'Log group is already disabled'
+  if log_group == '❤️' then
+    return 'لوگ گروه در حال حاظر غیر فعال است'
   else
-    data[tostring(groups)][tostring(msg.to.id)]['log_group'] = 'no'
+    data[tostring(groups)][tostring(msg.to.id)]['log_group'] = '❤️'
     save_data(_config.moderation.data, data)
-    return 'log group has been disabled'
+    return 'لوگ گروه غیر فعال شد'
   end
 end
 
@@ -443,7 +443,7 @@ function run(msg, matches)
     --vardump(msg)
    	local name_log = user_print_name(msg.from)
        if matches[1] == 'log' and is_owner(msg) then
-		savelog(msg.to.id, "log file created by owner")
+		savelog(msg.to.id, "فایل لوگ توسط مدیر ایجاد شد")
 		send_document("chat#id"..msg.to.id,"./groups/"..msg.to.id.."log.txt", ok_cb, false)
         end
 
@@ -532,7 +532,7 @@ function run(msg, matches)
                     local group_name_set = data[tostring(msg.to.id)]['settings']['set_name']
                     local to_rename = 'chat#id'..msg.to.id
                     rename_chat(to_rename, group_name_set, ok_cb, false)
-                    savelog(msg.to.id, "Realm { "..msg.to.print_name.." }  name changed to [ "..new_name.." ] by "..name_log.." ["..msg.from.id.."]")
+                    savelog(msg.to.id, "ریلم { "..msg.to.print_name.." }  نام تغییر یافت به [ "..new_name.." ] توسط "..name_log.." ["..msg.from.id.."]")
                 end
 		if matches[1] == 'setgpname' and is_admin(msg) then
 		    local new_name = string.gsub(matches[3], '_', ' ')
@@ -541,7 +541,7 @@ function run(msg, matches)
 		    local group_name_set = data[tostring(matches[2])]['settings']['set_name']
 		    local to_rename = 'chat#id'..matches[2]
 		    rename_chat(to_rename, group_name_set, ok_cb, false)
-                    savelog(msg.to.id, "Group { "..msg.to.print_name.." }  name changed to [ "..new_name.." ] by "..name_log.." ["..msg.from.id.."]")
+                    savelog(msg.to.id, "گروه { "..msg.to.print_name.." }  نام تغییر یافت به [ "..new_name.." ] توسط "..name_log.." ["..msg.from.id.."]")
 		end
 
 	    end 
@@ -552,7 +552,7 @@ function run(msg, matches)
     	end
               if matches[1] == 'set' then
                 if matches[2] == 'loggroup' then
-                   savelog(msg.to.id, name_log.." ["..msg.from.id.."] set as log group")
+                   savelog(msg.to.id, name_log.." ["..msg.from.id.."] تنظیم به عنان فایل لوگ")
                   return set_log_group(msg)
                 end
               end
@@ -566,7 +566,7 @@ function run(msg, matches)
                      print("Closing Group: "..receiver),
                      chat_info(receiver, killchat, {receiver=receiver})
                   else
-                     return 'Error: Group '..matches[3]..' not found' 
+                     return 'گروه: خطا '..matches[3]..' پیدا نشد' 
                     end
                  end
                 if matches[1] == 'kill' and matches[2] == 'realm' then
@@ -579,12 +579,12 @@ function run(msg, matches)
                      print("Closing realm: "..receiver),
                      chat_info(receiver, killrealm, {receiver=receiver})
                   else
-                     return 'Error: Realm '..matches[3]..' not found' 
+                     return 'ریلم: خطا '..matches[3]..' پیدا نشد' 
                     end
                  end
 		if matches[1] == 'chat_add_user' then
 		    if not msg.service then
-		        return "Are you trying to troll me?"
+		        return "آیا تو می خواهی مرا بخندانی؟"
 		    end
 		    local user = 'user#id'..msg.action.user.id
 		    local chat = 'chat#id'..msg.to.id
@@ -595,7 +595,7 @@ function run(msg, matches)
 		if matches[1] == 'addadmin' then
 			if string.match(matches[2], '^%d+$') then
 				local admin_id = matches[2]
-				print("user "..admin_id.." has been promoted as admin")
+				print("user "..admin_id.." به لیست مدیران اضافه شد")
 				return admin_promote(msg, admin_id)
 			else
 			local member = string.gsub(matches[2], "@", "")
@@ -606,7 +606,7 @@ function run(msg, matches)
 		if matches[1] == 'removeadmin' then
 			if string.match(matches[2], '^%d+$') then
 				local admin_id = matches[2]
-				print("user "..admin_id.." has been demoted")
+				print("user "..admin_id.." از لیست مدیران حذف شد")
 				return admin_demote(msg, admin_id)
 			else
 			local member = string.gsub(matches[2], "@", "")
@@ -625,22 +625,22 @@ function run(msg, matches)
                   if msg.to.type == 'chat' then
 			groups_list(msg)
 		        send_document("chat#id"..msg.to.id, "./groups/lists/groups.txt", ok_cb, false)	
-			return "Group list created" --group_list(msg)
+			return "لیست گروه ایجاد شد" --group_list(msg)
                    elseif msg.to.type == 'user' then 
                         groups_list(msg)
 		        send_document("user#id"..msg.from.id, "./groups/lists/groups.txt", ok_cb, false)	
-			return "Group list created" --group_list(msg)
+			return "لیست گروه ایجاد شد" --group_list(msg)
                   end
 		end
 		if matches[1] == 'list' and matches[2] == 'realms' then
                   if msg.to.type == 'chat' then
 			realms_list(msg)
 		        send_document("chat#id"..msg.to.id, "./groups/lists/realms.txt", ok_cb, false)	
-			return "Realms list created" --realms_list(msg)
+			return "لیست ریلم ایجاد شد" --realms_list(msg)
                    elseif msg.to.type == 'user' then 
                         realms_list(msg)
 		        send_document("user#id"..msg.from.id, "./groups/lists/realms.txt", ok_cb, false)	
-			return "Realms list created" --realms_list(msg)
+			return "لیست ریلم ایجاد شد" --realms_list(msg)
                   end
 		end
    		 if matches[1] == 'res' and is_momod(msg) then 
@@ -683,8 +683,6 @@ return {
   run = run
 }
 end
---Copyright and edit; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
-
+-- مدیر : @mohammadarak
+-- ربات : @avirabot
+-- هر گونه کپی برداری بدون ذکر منبع حرام است 
