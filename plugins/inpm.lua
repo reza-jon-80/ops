@@ -17,9 +17,9 @@ local function chat_list(msg)
     local data = load_data(_config.moderation.data)
         local groups = 'groups'
         if not data[tostring(groups)] then
-                return 'No groups at the moment'
+                return 'در حال حاظر شما گروهی ندارید'
         end
-        local message = 'List of Groups:\n*Use /join (ID) to join*\n\n '
+        local message = 'لیست گروه های شما:\n*Use /join (ID) to join*\n\n '
         for k,v in pairs(data[tostring(groups)]) do
                 local settings = data[tostring(v)]['settings']
                 for m,n in pairsByKeys(settings) do
@@ -42,22 +42,22 @@ local function run(msg, matches)
 	 local data = load_data(_config.moderation.data)
     if matches[1] == 'join' and data[tostring(matches[2])] then
         if is_banned(msg.from.id, matches[2]) then
-	    return 'You are banned.'
+	    return 'شما بن شدید'
 	 end
       if is_gbanned(msg.from.id) then
-            return 'You are globally banned.'
+            return 'شما بن جهانی شدید'
       end
       if data[tostring(matches[2])]['settings']['lock_member'] == 'yes' and not is_owner2(msg.from.id, matches[2]) then
-        return 'Group is private.'
+        return 'گروه مخفی می باشد'
       end
           local chat_id = "chat#id"..matches[2]
           local user_id = "user#id"..msg.from.id
    	  chat_add_user(chat_id, user_id, ok_cb, false)   
 	  local group_name = data[tostring(matches[2])]['settings']['set_name']	
-	  return "Added you to chat:\n\n👥"..group_name.." (ID:"..matches[2]..")"
+	  return "شما را به این گروه اضافه کرد:\n\n👥"..group_name.." (ID:"..matches[2]..")"
         elseif matches[1] == 'join' and not data[tostring(matches[2])] then
 		
-         	return "Chat not found."
+         	return "گروه پیدا نشد"
         end
      if matches[1] == 'chats'then
        if is_admin(msg) and msg.to.type == 'chat' then
@@ -87,8 +87,6 @@ return {
     run = run,
 }
 end
-
---Copyright; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
+-- مدیر : @mohammadarak
+-- ربات : @avirabot
+-- هر گونه کپی برداری بدون ذکر منبع حرام است 
