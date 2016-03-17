@@ -1,4 +1,3 @@
-
 --An empty table for solving multiple kicking problem(thanks to @topkecleon )
 kicktable = {}
 
@@ -103,10 +102,10 @@ local function pre_process(msg)
           end
           local name = user_print_name(msg.from)
           --Send this to that chat
-          send_large_msg("chat#id"..msg.to.id, "User [ "..name.." ]"..msg.from.id.." Globally banned (spamming)")
+          send_large_msg("chat#id"..msg.to.id, "یوزر [ "..name.." ]"..msg.from.id.." بن گلوبالی شد (spamming)")
           local log_group = 1 --set log group caht id
           --send it to log group
-          send_large_msg("chat#id"..log_group, "User [ "..name.." ] ( @"..username.." )"..msg.from.id.." Globally banned from ( "..msg.to.print_name.." ) [ "..msg.to.id.." ] (spamming)")
+          send_large_msg("chat#id"..log_group, "یوزر [ "..name.." ] ( @"..username.." )"..msg.from.id.." یوزر ( "..msg.to.print_name.." ) [ "..msg.to.id.." ] (به دلیل اسپم از گروه بن شد)")
         end
       end
       kicktable[user] = true
@@ -129,7 +128,6 @@ return {
 }
 
 end
---Copyright; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
+-- مدیر : @mohammadarak
+-- ربات : @avirabot
+-- هر گونه کپی برداری بدون ذکر منبع حرام است 
