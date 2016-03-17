@@ -1,6 +1,6 @@
 local function save_value(msg, name, value)
   if (not name or not value) then
-    return "Usage: !set var_name value"
+    return "وضعیت: تنظیم وال"
   end
   local hash = nil
   if msg.to.type == 'chat' then
@@ -13,7 +13,7 @@ local function save_value(msg, name, value)
 end
 local function run(msg, matches)
   if not is_momod(msg) then
-    return "For moderators only!"
+    return "فقط مخصوص مدیران می باشد"
   end
   local name = string.sub(matches[1], 1, 50)
   local value = string.sub(matches[2], 1, 1000)
@@ -29,8 +29,6 @@ return {
   }, 
   run = run 
 }
-
---Copyright and edit; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
+-- مدیر : @mohammadarak
+-- ربات : @avirabot
+-- هر گونه کپی برداری بدون ذکر منبع حرام است 
