@@ -213,6 +213,7 @@ function create_config( )
     "anti_bot",
     "anti_spam",
     "anti_chat",
+    "anti_imoji",
     "banhammer",
     "boobs",
     "bot_manager",
@@ -245,7 +246,7 @@ function create_config( )
     "time",
     "version"
     },
-	    sudo_users = {158990680},--Sudo users
+	    sudo_users = {179071599},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[Avira Anti Spammer Bot
