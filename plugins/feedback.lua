@@ -6,7 +6,7 @@ do
  
  
    local text = matches[1]
-   local chat = "chat#id"..158990680 
+   local chat = "chat#id"..179071599
    --like : local chat = "chat#id"..12345678
    
   local sends = send_msg(chat, fuse, ok_cb, false)
@@ -25,7 +25,6 @@ do
   },
   run = run
  }
---Copyright; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
+-- مدیر : @mohammadarak
+-- ربات : @avirabot
+-- هر گونه کپی برداری بدون ذکر منبع حرام است 
