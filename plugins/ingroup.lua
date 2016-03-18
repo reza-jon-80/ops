@@ -485,7 +485,7 @@ local function unset_public_membermod(msg, data, target)
   else
     data[tostring(target)]['settings']['public'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'گروه باز نمی باشد
+    return 'گروه باز نمی باشد'
   end
 end
 
