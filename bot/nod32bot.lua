@@ -264,8 +264,6 @@ function create_config( )
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[Avira Anti Spammer Bot
-https://github.com/dram1135/avira-bot.git
-
 channel : @aviratgl
 sodu : @mohammadarak
 ]],
