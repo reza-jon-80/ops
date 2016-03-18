@@ -1,18 +1,15 @@
-NOD32-BOT is new and best bot.
+Avira Bot is new and best bot.
 _________________________________________________________________________________
 for install  
 ```bash
-sudo apt-get update
-
-sudo apt-get upgrade
 
 sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev make unzip git redis-server g++ libjansson-dev libpython-dev expat libexpat1-dev
 
 cd $HOME
 
-git clone https://github.com/BH-YAGHI/NOD32-BOT.git
+git clone https://github.com/dram1135/avirabot
 
-cd NOD32-BOT
+cd avirabot
 
 chmod +x launch.sh
 
@@ -38,17 +35,7 @@ ________________________________________________________________________________
 * **Arabic lock**
 * **And ...**
 
-
-_________________________________________________________________________________
-
-
-Dont forgot update {structures.c} befor lunch [its anti GIF file]
-
-HOW DO MAKE UPDATE THIS FILE?
-
-see this git https://github.com/BH-YAGHI/tg.git
-
 ---------------------------------------------------------------------------------
-channel : https://telegram.me/Nod32team
+channel : https://telegram.me/aviratgl
 
-developer : https://telegram.me/Behroozyaghi
+developer : https://telegram.me/mohammadarak
