@@ -220,7 +220,9 @@ local function show_group_settingsmod(msg, data, target)
     	leave_ban = data[tostring(msg.to.id)]['settings']['leave_ban']
    	end
   local settings = data[tostring(target)]['settings']
-  local text = "›تنظیمات فعلی گروه:\n•••حذف اعضای جدید وارد شده توسط لینک: "..settings.lock_join.."\n•••قفل فحش دادن: "..settings.antifosh.."\n•••قفل چت گروه: "..settings.lock_chat.."\n•••قفل تغییرات گروه: "..settings.antiads.."\n•••قفل نام گروه: "..settings.lock_name.."\n•••قفل عکس گروه: "..settings.lock_photo.."\n•••حذف اعضای جدید: "..settings.lock_member.."\n•••قفل خارج شدن اعضا: "..leave_ban.."\n•••میزان حساسیت ضد اسپم: "..NUM_MSG_MAX.."\n•••ربات ها می توانند بیایند: "..bots_protection.."               
+  local text = "›تنظیمات فعلی گروه:\n•••حذف اعضای جدید وارد شده توسط لینک: "..settings.lock_join.."\n•••قفل فحش دادن: "..settings.antifosh.."\n•••قفل چت گروه: "..settings.lock_chat.."\n•••ق
+  فل تغییرات گروه: "..settings.antiads.."\n•••قفل نام گروه: "..settings.lock_name.."\n•••قفل عکس گروه: "..settings.lock_photo.."\n•••حذف اعضای جدید: "..settings.lock_member.."\n•••قفل خارج شدن اعضا: "..leave_ban.."\n•••م
+  میزان حساسیت ضد اسپم:"..NUM_MSG_MAX.."\n•••ربات ها می توانند بیایند: "..bots_protection.."               
   return text
 end
 
