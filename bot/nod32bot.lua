@@ -250,6 +250,8 @@ function create_config( )
     "spam",
     "stats",
     "support",
+    "tranlate",
+    "weather",
     "filterworld",
     "server_manager",
     "time",
