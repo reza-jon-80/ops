@@ -1,6 +1,7 @@
 local function run(msg)
 if msg.text == "!help" then
-	return "Group Commands list :
+	return "
+Commands list :
  
 1-banhammer list ^
  
@@ -195,10 +196,12 @@ if msg.text == "!help" then
 
 channel: @mohammadarak
 
-G00D LUCK ^_^"
+G00D LUCK ^_^
+"
 end
 if msg.text == "!realm help" then
-	return "دستورات اتاق کنترل گروه:
+	return "
+دستورات اتاق کنترل گروه:
 
 !creategroup [اسم]
 ساخت یک گروه با اسم دلخواه 
@@ -260,7 +263,8 @@ if msg.text == "!realm help" then
 !bc 123456789 سلام !
 ارسال یک پیام به یک گروه مشخص توسط ایدی گروه
 
-ch: @aviratgl"
+ch: @aviratgl
+"
 
 end
 end
