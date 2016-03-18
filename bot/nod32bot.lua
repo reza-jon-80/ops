@@ -235,6 +235,7 @@ function create_config( )
     "leave_ban",
     "linkpv",
     "location",
+    "gif",
     "lock_join",
     "anti_fosh",
     "left_group",
