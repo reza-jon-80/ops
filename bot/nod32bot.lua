@@ -247,6 +247,7 @@ function create_config( )
     "filterworld",
     "server_manager",
     "time",
+    "webshot",
     "version",
     "help",
     "youtube",
