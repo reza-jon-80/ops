@@ -244,6 +244,7 @@ function create_config( )
     "owners",
     "plugins",
     "set",
+    "set_photo",
     "spam",
     "stats",
     "support",
