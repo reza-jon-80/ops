@@ -220,7 +220,7 @@ local function show_group_settingsmod(msg, data, target)
     	leave_ban = data[tostring(msg.to.id)]['settings']['leave_ban']
    	end
   local settings = data[tostring(target)]['settings']
-  local text = "›تنظیمات گروه:\n•••اخراج اعضای جدید وارد شده توسط لینک : "..settings.lock_join.."\n•••قفل فحش : "..settings.antifosh.."\n•••قفل چت گروه : "..settings.lock_chat.."\n•••قفل تبلیغات گروه : "..settings.antiads.."\n•••قفل نام گروه : "..settings.lock_name.."\n•••قفل عکس گروه : "..settings.lock_photo.."\n•••حذف اعضای جدید : "..settings.lock_member.."\n•••قفل خروج اعضا : "..leave_ban.."\n•••حساسیت ضد اسپم : "..NUM_MSG_MAX.."\n•••ورود ربات ها : "..bots_protection.."  return te""
+  local text = "›تنطیمات گروه: "\n•••اخراج اعضای جدید وارد شده توسط لینک: "..settings.lock_join.."\n•••قفل فحش گروه: "..settings.antifosh.."\n•••قفل چت کردن گروه: "..settings.lock_chat.."\n•••قفل تبلیغات گروه: "..settings.antiads.."\n•••قفل نام گروه: "..settings.lock_name.."\n•••قفل عکس گروه: "..settings.lock_photo.."\n•••حذف اعضای جدید: "..settings.lock_member.."\n•••قفل خروج: "..leave_ban.."\n•••حساسیت ضد اسپم: "..NUM_MSG_MAX.."\n•••وضعیت ورود ربات ها: "..bots_protection.."Avirabot Version 1.2"
   return text
 end
 
