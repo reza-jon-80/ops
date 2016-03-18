@@ -221,6 +221,7 @@ local function show_group_settingsmod(msg, data, target)
    	end
   local settings = data[tostring(target)]['settings']
   local text = "›تنظیمات گروه:\n•••اخراج اعضای جدید وارد شده توسط لینک : "..settings.lock_join.."\n•••قفل فحش : "..settings.antifosh.."\n•••قفل چت گروه : "..settings.lock_chat.."\n•••قفل تبلیغات گروه : "..settings.antiads.."\n•••قفل نام گروه : "..settings.lock_name.."\n•••قفل عکس گروه : "..settings.lock_photo.."\n•••حذف اعضای جدید : "..settings.lock_member.."\n•••قفل خروج اعضا : "..leave_ban.."\n•••حساسیت ضد اسپم : "..NUM_MSG_MAX.."\n•••ورود ربات ها : "..bots_protection.."  return text
+  return text
 end
 
 local function set_descriptionmod(msg, data, target, about)
