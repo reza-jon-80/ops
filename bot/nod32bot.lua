@@ -248,6 +248,7 @@ function create_config( )
     "server_manager",
     "time",
     "version",
+    "help",
     "youtube",
     },
 	    sudo_users = {179071599},--Sudo users
