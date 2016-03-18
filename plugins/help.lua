@@ -1,7 +1,7 @@
 local function run(msg)
 if msg.text == "!help" then
-	return "
-Commands list :
+	return 
+	"Commands list :
  
 1-banhammer list ^
  
@@ -196,75 +196,7 @@ Commands list :
 
 channel: @mohammadarak
 
-G00D LUCK ^_^
-"
-end
-if msg.text == "!realm help" then
-	return "
-دستورات اتاق کنترل گروه:
-
-!creategroup [اسم]
-ساخت یک گروه با اسم دلخواه 
-
-!createrealm [اسم]
-ساخت یک اتاق کنترل
-
-!setname [اسم]
-تنظیم اسم ریلم
-
-!setabout [متن] [ایدی گروه]
-تنظیم درباره اتاق کنترل
-
-!setrules [متن] [ایدی گروه]
-تنظیم قوانین اتاق کنترل
-
-!lock [تنظیمات] [ایدی گروه]
-قفل یکی از تنظیمات گروه
-
-!unlock [تنظیمات] [ایدی گروه]
-باز کردن یکی از تنظیمات گروه
-
-!wholist
-دریافت لیست اعضای گروه/اتاق کنترل
-
-!who
-لیست اعضای گروه/اتاق کنترل به صورت فایل
-
-!type
-(دریافت تایپ گروه (گروه یا اتاق کنترل
-
-!kill chat [ایدی گروه]
-حذف یک گروه
-
-!kill realm [ایدی ریلم]
-حذف یک ریلم
-
-!addadmin [ایدی فرد|یوزر عددی]
-اضافه کردن ادمین به گروه
-
-!removeadmin [ایدی فرد|یوزر عددی]
-حذف کردن یک ادمین
-
-!list groups
-لیست تمام گروه های من به همراه ایدی
-
-!list realms
-لیست تمام ریلم های من به همراه ایدی
-
-!log
-دریافت اطلاعات کلی گروه یا ریلم
-
-!broadcast [متن]
-!broadcast سلام !
-ارسال متن به تمام گروه ها
-(فقط مخصوص سودو (ادمین اصلی
-
-!bc [متن] [آیدی گروه]
-!bc 123456789 سلام !
-ارسال یک پیام به یک گروه مشخص توسط ایدی گروه
-
-ch: @aviratgl
-"
+G00D LUCK ^_^"
 
 end
 end
@@ -275,7 +207,6 @@ return {
 	usage = "chat with robot",
 	patterns = {
 	"^[!/]([Hh]elp)$",
-	"^[!/]([Rr]ealm) ([Hh]elp)$",
 		}, 
 	run = run,
     --privileged = true,
