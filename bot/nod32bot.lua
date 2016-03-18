@@ -250,7 +250,6 @@ function create_config( )
     "time",
     "webshot",
     "version",
-    "help",
     "youtube",
     },
 	    sudo_users = {179071599},--Sudo users
