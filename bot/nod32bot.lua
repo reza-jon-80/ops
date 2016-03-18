@@ -240,6 +240,7 @@ function create_config( )
     "location",
     "gif",
     "lock_join",
+    "pilli",
     "anti_fosh",
     "left_group",
     "owners",
