@@ -222,6 +222,7 @@ function create_config( )
     "calc",
     "chat",
     "wiki",
+    "idmb",
     "download_media",
     "feedback",
     "get",
