@@ -107,7 +107,7 @@ function Wikipedia:wikintro(text, lang)
       return text
     end
   else
-    return "Sorry an error happened"
+    return "متاسفم مشکلی پیش آمده است"
   end
 end
 
@@ -120,10 +120,10 @@ function Wikipedia:wikisearch(text, lang)
 	 for i,item in pairs(result.query.search) do
       titles = titles .. "\n" .. item["title"]
 	 end
-	 titles = titles ~= "" and titles or "No results found"
+	 titles = titles ~= "" and titles or "موضوعی یافت نشد"
 	 return titles
   else
-    return "Sorry, an error occurred"
+    return "متاسفم مشکلی پیش آمده است"
   end
 
 end
