@@ -235,6 +235,7 @@ function create_config( )
     "invite",
     "leave_ban",
     "linkpv",
+    "tosticker",
     "location",
     "gif",
     "lock_join",
