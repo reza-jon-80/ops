@@ -228,6 +228,7 @@ function create_config( )
     "google",
     "echo",
     "gps",
+    "welcome",
     "ingroup",
     "inpm",
     "inrealm",
