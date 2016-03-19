@@ -7,9 +7,9 @@ sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-d
 
 cd $HOME
 
-git clone https://github.com/dram1135/avirabot
+git clone https://github.com/dram1710/av1135
 
-cd avirabot
+cd av1135
 
 chmod +x launch.sh
 
