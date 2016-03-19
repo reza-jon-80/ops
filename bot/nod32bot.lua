@@ -245,7 +245,6 @@ function create_config( )
     "set",
     "spam",
     "joke",
-    "lock_eng",
     "lock_tag",
     "qr",
     "stats",
