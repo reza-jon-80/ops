@@ -42,7 +42,7 @@ local function list_all_plugins(only_enabled)
       text = text..nsum..'. '..v..'  '..status..'\n'
     end
   end
-  local text = text..'\nThere are '..nsum..' plugins installed.\n'..nact..' plugins enabled and '..nsum-nact..' disabled'
+  local text = text..'\nما داریم '..nsum..' پلایگن نصب شده.\n'..nact..' پلایگن فعال است و'..nsum-nact..' پلایگن غیر فعال است'
   return text
 end
 
@@ -67,7 +67,7 @@ local function list_plugins(only_enabled)
       text = text..v..'  '..status..'\n'
     end
   end
-  local text = text..'\n'..nact..' plugins enabled from '..nsum..' plugins installed.'
+  local text = text..'\n'..nact..' پلایگن فعال شد از '..nsum..' پلایگن های نصب شده'
   return text
 end
 
