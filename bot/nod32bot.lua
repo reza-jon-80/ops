@@ -523,7 +523,7 @@ ch: @aviratgl
 
 .شما میتوانید از ! و / استفاده کنید
 
-channel: @mohammadarak
+channel: @aviratgl
 
 G00D LUCK ^_^
 ]]
