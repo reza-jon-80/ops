@@ -220,7 +220,7 @@ local function show_group_settingsmod(msg, data, target)
     	leave_ban = data[tostring(msg.to.id)]['settings']['leave_ban']
    	end
   local settings = data[tostring(target)]['settings']
-  local text = "› تنظیمات گروه :\n••• قفل ورود توسط لینک : "..settings.lock_join.."\n••• قفل فحش دادن : "..settings.antifosh.."\n••• قفل چت کردن : "..settings.lock_chat.."\n••• قفل تبلیغات : "..settings.antiads.."\n••• قفل نام گروه : "..settings.lock_name.."\n••• قفل عکس گروه : "..settings.lock_photo.."\n••• حذف اعضای جدید : "..settings.lock_member.."\n••• قفل خروج اعضا : "..leave_ban.."\n••• میزان حساسیت ضد اسپم : "..NUM_MSG_MAX.."\n••• قفل ورود ربات ها : "..bots_protection.."                                        ›»Avirabot Version 1.2"
+  local text = "› تنظیمات گروه :\n••• قفل ورود توسط لینک : "..settings.lock_join.."\n••• قفل فحش دادن : "..settings.antifosh.."\n••• قفل چت کردن : "..settings.lock_chat.."\n••• قفل تبلیغات : "..settings.antiads.."\n••• قفل نام گروه : "..settings.lock_name.."\n••• قفل عکس گروه : "..settings.lock_photo.."\n••• حذف اعضای جدید : "..settings.lock_member.."\n••• قفل خروج اعضا : "..leave_ban.."\n••• میزان حساسیت ضد اسپم : "..NUM_MSG_MAX.."\n••• قفل ورود ربات ها : "..bots_protection.."                             ربات ضد اسپم آویرا ورژن 3
   return text
 end
 
